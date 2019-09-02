@@ -5,6 +5,10 @@ import java.util.Date;
 
 import br.edu.utfpr.dv.siacoes.util.DateUtils;
 
+@AllArgsConstructor
+@Getter
+@Setter
+
 public class ActivitySubmission implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -62,117 +66,7 @@ public class ActivitySubmission implements Serializable {
 	private String description;
 	private int stage;
 	private String feedbackReason;
-	
-	public ActivitySubmission(){
-		this.setIdActivitySubmission(0);
-		this.setStudent(new User());
-		this.setFeedbackUser(new User());
-		this.setDepartment(new Department());
-		this.setActivity(new Activity());
-		this.setSemester(DateUtils.getSemester());
-		this.setYear(DateUtils.getYear());
-		this.setSubmissionDate(new Date());
-		this.setFile(null);
-		this.setAmount(0);
-		this.setFeedback(ActivityFeedback.NONE);
-		this.setFeedbackDate(null);
-		this.setValidatedAmount(0);
-		this.setComments("");
-		this.setDescription("");
-		this.setStage(0);
-		this.setFeedbackReason("");
-	}
-	
-	public int getIdActivitySubmission() {
-		return idActivitySubmission;
-	}
-	public void setIdActivitySubmission(int idActivitySubmission) {
-		this.idActivitySubmission = idActivitySubmission;
-	}
-	public User getStudent() {
-		return student;
-	}
-	public void setStudent(User student) {
-		this.student = student;
-	}
-	public User getFeedbackUser() {
-		return feedbackUser;
-	}
-	public void setFeedbackUser(User feedbackUser) {
-		this.feedbackUser = feedbackUser;
-	}
-	public Department getDepartment() {
-		return department;
-	}
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-	public Activity getActivity(){
-		return activity;
-	}
-	public void setActivity(Activity activity){
-		this.activity = activity;
-	}
-	public int getSemester() {
-		return semester;
-	}
-	public void setSemester(int semester) {
-		this.semester = semester;
-	}
-	public int getYear() {
-		return year;
-	}
-	public void setYear(int year) {
-		this.year = year;
-	}
-	public Date getSubmissionDate() {
-		return submissionDate;
-	}
-	public void setSubmissionDate(Date submissionDate) {
-		this.submissionDate = submissionDate;
-	}
-	public byte[] getFile() {
-		return file;
-	}
-	public void setFile(byte[] file) {
-		this.file = file;
-	}
-	public double getAmount() {
-		return amount;
-	}
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
-	public ActivityFeedback getFeedback(){
-		return feedback;
-	}
-	public void setFeedback(ActivityFeedback feedback){
-		this.feedback = feedback;
-	}
-	public Date getFeedbackDate(){
-		return feedbackDate;
-	}
-	public void setFeedbackDate(Date feedbackDate){
-		this.feedbackDate = feedbackDate;
-	}
-	public double getValidatedAmount(){
-		return validatedAmount;
-	}
-	public void setValidatedAmount(double validatedAmount){
-		this.validatedAmount = validatedAmount;
-	}
-	public String getComments() {
-		return comments;
-	}
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
+
 	public double getScore() {
 		double score = 0;
 		
@@ -190,17 +84,4 @@ public class ActivitySubmission implements Serializable {
 		
 		return score;
 	}
-	public int getStage() {
-		return stage;
-	}
-	public void setStage(int stage) {
-		this.stage = stage;
-	}
-	public String getFeedbackReason() {
-		return feedbackReason;
-	}
-	public void setFeedbackReason(String feedbackReason) {
-		this.feedbackReason = feedbackReason;
-	}
-
 }
