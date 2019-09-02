@@ -2,6 +2,10 @@
 
 import java.io.Serializable;
 
+@AllArgsConstructor
+@Getter
+@Setter
+
 public class ActivityGroup implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -11,45 +15,6 @@ public class ActivityGroup implements Serializable {
 	private int sequence;
 	private int minimumScore;
 	private int maximumScore;
-	
-	public ActivityGroup(){
-		this.setIdActivityGroup(0);
-		this.setDescription("");
-		this.setSequence(0);
-		this.setMinimumScore(0);
-		this.setMaximumScore(0);
-	}
-	
-	public int getIdActivityGroup() {
-		return idActivityGroup;
-	}
-	public void setIdActivityGroup(int idActivityGroup) {
-		this.idActivityGroup = idActivityGroup;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public int getSequence() {
-		return sequence;
-	}
-	public void setSequence(int sequence) {
-		this.sequence = sequence;
-	}
-	public int getMinimumScore() {
-		return minimumScore;
-	}
-	public void setMinimumScore(int minimumScore) {
-		this.minimumScore = minimumScore;
-	}
-	public int getMaximumScore() {
-		return maximumScore;
-	}
-	public void setMaximumScore(int maximumScore) {
-		this.maximumScore = maximumScore;
-	}
 	
 	public String toString(){
 		return this.getDescription();

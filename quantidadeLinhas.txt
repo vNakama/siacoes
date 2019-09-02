@@ -1,1 +1,3 @@
-total de linhas de código - 7103
+﻿total de linhas de código - 7103
+
+total de linhas com lombok - 6655
