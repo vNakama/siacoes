@@ -1,0 +1,16 @@
+package br.edu.utfpr.dv.siacoes.dao;
+
+interface IActivity {
+
+    default boolean valida (String atividade) {
+        if (atividade.equalsIgnoreCase("Activity")) {
+            return true;
+        } else if (atividade.equalsIgnoreCase("ActivityGroup")) {
+            return true;
+        } else if (atividade.equalsIgnoreCase("ActivitySubmission")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}

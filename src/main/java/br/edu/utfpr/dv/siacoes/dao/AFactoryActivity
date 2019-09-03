@@ -1,0 +1,19 @@
+package br.edu.utfpr.dv.siacoes.dao;
+
+import br.edu.utfpr.dv.siacoes.dao.ActivityDAO;
+import br.edu.utfpr.dv.siacoes.dao.ActivityGroupDAO;
+import br.edu.utfpr.dv.siacoes.dao.ActivitySubmissionDAO;
+
+public interface AFactoryAcivity {
+
+    public static IActivity of (String activity) {
+        switch (activity) {
+            case "Activity": return new ActivityDAO ();
+            case "ActivityGroup": return new ActivityGroupDAO ();
+            case "ActivitySubmission": return new ActivitySubmitionDAO ();
+        }
+
+        return null;
+    }
+
+}

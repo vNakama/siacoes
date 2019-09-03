@@ -21,7 +21,7 @@ public class ActivityGroupDAO {
 		try{
 			conn = ConnectionDAO.getInstance().getConnection();
 			stmt = conn.createStatement();
-		
+
 			rs = stmt.executeQuery("SELECT * FROM activitygroup ORDER BY sequence");
 			
 			List<ActivityGroup> list = new ArrayList<ActivityGroup>();
