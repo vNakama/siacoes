@@ -22,7 +22,7 @@ public abstract class TemplateDAO {
 
         try{
             conn = ConnectionDAO.getInstance().getConnection();
-            stmt = conn.prepareStatement(sqlStm);
+            stmt = conn.prepareStatement(getFindByIdStatement ());
 
             stmt.setInt(1, idDepartment);
 
@@ -52,14 +52,16 @@ public abstract class TemplateDAO {
             conn = ConnectionDAO.getInstance().getConnection();
 
             if(insert){
-                stmt = conn.prepareStatement(sqlInsertStm);
+                stmt = conn.prepareStatement(getInsertStatement ());
             }else{
-                stmt = conn.prepareStatement(sqlUpdateStm);
+                stmt = conn.prepareStatement(getUpdateStatement ());
             }
 
             stmt.setDouble(1, config.getMinimumScore());
             stmt.setInt(2, config.getMaxFileSize());
             stmt.setInt(3, config.getDepartment().getIdDepartment());
+
+            setStatement (stmt, config);
 
             stmt.execute();
 
@@ -83,4 +85,9 @@ public abstract class TemplateDAO {
 
         return config;
     }
+
+    protected abstract String getInsertStatement ();
+    protected abstract String getUpdateStatement ();
+    protected abstract String getFindByIdStatement ();
+    protected abstract void setStatement (PreparedStatement stmt, T obj);
 }
